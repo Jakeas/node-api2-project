@@ -71,6 +71,7 @@ describe('server.js', () => {
   describe('3 [POST] /api/posts', () => {
     it('responds with a 201', async () => {
       const res = await request(server).post('/api/posts').send(post1)
+      console.log("res status", res.status)
       expect(res.status).toBe(201)
     }, 500)
     it('responds with a new post', async () => {
@@ -166,4 +167,4 @@ describe('server.js', () => {
       expect(res.body).toMatchObject([comments[2]])
     }, 500)
   })
-})
+ })
